@@ -1,0 +1,79 @@
+
+<html th:fragment="header" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
+	integrity="sha384-eoTu3+HydHRBIjnCVwsFyCpUDZHZSFKEJD0mc3ZqSBSb6YhZzRHeiomAUWCstIWo"
+	crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<button class="navbar-toggler mx-4" type="button"
+			data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg"
+			aria-controls="navbarOffcanvasLg">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand mx-4" href="/acceuil"><i
+			class="bi bi-house-door"></i> </a>
+		<div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1"
+			id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+					aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<form class="d-flex flex-grow-1 pe-5" role="search"
+					action="Recherche">
+					<div class="input-group">
+						<select role="search" class="form-select"
+							aria-label="Default select example"
+							onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+
+							<option
+								value="${pageContext.request.contextPath}/ServletMainpage?cat=${categorie.idCategorie}">${categorie.titreCategorie}</option>
+
+						</select> <input type="text" class="form-control w-50"
+							placeholder="Recherche" aria-label="Recherche" name="recherche"
+							aria-describedby="basic-addon1" value="${mot}">
+						<button class="btn btn-outline-success ms-2" type="submit">
+							<i class="bi bi-search"></i>
+						</button>
+					</div>
+				</form>
+				<ul class="navbar-nav pe-5" sec:authorize="isAuthenticated()">
+					<li> <!--  th:text="${#authentication.getPrincipal().getFullName()} "-->
+					</li>
+
+					<li><a class="btn btn-danger" th:href="@{/logout}">logout</a></li>
+
+				</ul>
+				<ul class="navbar-nav pe-5" sec:authorize="isAnonymous()">
+
+					<li class="nav-item mx-2"><a type="button"
+						class="btn btn-outline-primary" th:href="@{/login}">Se
+							connecter</a></li>
+					<li class="nav-item mx-2"><a type="button" class="btn btn-primary"
+						th:href="@{/inscription}">S'inscrire</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+</html>
+
+</body>
+</html>
