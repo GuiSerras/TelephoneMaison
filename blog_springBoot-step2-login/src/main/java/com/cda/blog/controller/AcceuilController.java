@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class AcceuilController {
 
-
 	@GetMapping("/acceuil")
 	public String acceuil(){
 		return "acceuil";
-	}
+	}	
 }

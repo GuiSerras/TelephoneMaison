@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Skydash Admin</title>
+<!-- plugins:css -->
+<link rel="stylesheet" href="../../vendors/feather/feather.css">
+<link rel="stylesheet"
+	href="../../vendors/ti-icons/css/themify-icons.css">
+<link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+<!-- endinject -->
+<!-- Plugin css for this page -->
+<link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+<link rel="stylesheet"
+	href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+<!-- End plugin css for this page -->
+<!-- inject:css -->
+<link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+<!-- endinject -->
+<link rel="shortcut icon" href="../../images/favicon.png" />
+</head>
+
+<body>
+	<div class="container-scroller">
+		<!-- partial:../../partials/_navbar.html -->
+		<div th:replace="fragments/_navbar::_navbar"></div>
+		<!-- partial -->
+		<div class="container-fluid page-body-wrapper">
+			<!-- partial:partials/_settings-panel.html -->
+			<div th:replace="fragments/_settings-panel::_settings-panel"></div>
+			<!-- partial -->
+			<!-- partial:partials/_sidebar.html -->
+			<div th:replace="fragments/_sidebar::_sidebar"></div>
+			<!-- partial -->
+			<div class="main-panel">
+				<div class="content-wrapper">
+					<div class="row">
+						<div class="col-12 grid-margin">
+							<div class="card">
+								<div class="card-body">
+									<h4 class="card-title">Ajouter un Bien</h4>
+									<form method="POST" th:action="@{/dashBoard/ajouterBien}" th:object="${bien}" class="form-sample" enctype="multipart/form-data">
+										<div class="form-group">
+											<label>Image de couverture</label> <input type="file"
+												name="file" class="file-upload-default">
+											<div class="input-group col-xs-12">
+												<input name="image" type="text" class="form-control file-upload-info"
+													disabled placeholder="Upload Image"> <span
+													class="input-group-append">
+													<button class="file-upload-browse btn btn-primary"
+														type="button">Upload</button>
+												</span>
+											</div>
+										</div>
+										<p class="card-description">Address</p>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group row">
+													<label class="col-sm-3 col-form-label">Numéro de la
+														rue</label>
+													<div class="col-sm-9">
+														<input name="numeroB" type="number" class="form-control" />
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group row">
+													<label class="col-sm-3 col-form-label">Nom de la
+														rue</label>
+													<div class="col-sm-9">
+														<input name="adresseB" type="text" class="form-control" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group row">
+													<label class="col-sm-3 col-form-label">Indice de répétission</label>
+													<div class="col-sm-9">
+														<select name="indiceRepB" class="form-control">
+															<option>none</option>
+															<option>bis</option>
+															<option>tier</option>
+
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group row">
+													<label class="col-sm-3 col-form-label">Postcode</label>
+													<div class="col-sm-9">
+														<input name="codePostalB" type="text" class="form-control" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group row">
+													<label class="col-sm-3 col-form-label">City</label>
+													<div class="col-sm-9">
+														<input name="villeB" type="text" class="form-control" />
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group row">
+													<label class="col-sm-3 col-form-label">Country</label>
+													<div class="col-sm-9">
+														<select class="form-control">
+															<option>America</option>
+															<option>Italy</option>
+															<option>Russia</option>
+															<option>Britain</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group row">
+													<label class="col-sm-3 col-form-label">Prix</label>
+													<div class="col-sm-9">
+														<input name="prix" type="text" class="form-control" />
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group row">
+													<label class="col-sm-3 col-form-label">Superficie</label>
+													<div class="col-sm-9">
+														<input name="superficie" type="text" class="form-control" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<button  value="Upload" type="submit" class="btn btn-primary mr-2">Submit</button>
+										<button class="btn btn-light">Cancel</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- content-wrapper ends -->
+				<!-- partial:../../partials/_footer.html -->
+				<div th:replace="fragments/_footer::_footer"></div>
+				<!-- partial -->
+			</div>
+			<!-- main-panel ends -->
+		</div>
+		<!-- page-body-wrapper ends -->
+	</div>
+	<!-- container-scroller -->
+	<!-- plugins:js -->
+	<script src="../../vendors/js/vendor.bundle.base.js"></script>
+	<!-- endinject -->
+	<!-- Plugin js for this page -->
+	<script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+	<script src="../../vendors/select2/select2.min.js"></script>
+	<!-- End plugin js for this page -->
+	<!-- inject:js -->
+	<script src="../../js/off-canvas.js"></script>
+	<script src="../../js/hoverable-collapse.js"></script>
+	<script src="../../js/template.js"></script>
+	<script src="../../js/settings.js"></script>
+	<script src="../../js/todolist.js"></script>
+	<!-- endinject -->
+	<!-- Custom js for this page-->
+	<script src="../../js/file-upload.js"></script>
+	<script src="../../js/typeahead.js"></script>
+	<script src="../../js/select2.js"></script>
+	<!-- End custom js for this page-->
+</body>
+
+</html>

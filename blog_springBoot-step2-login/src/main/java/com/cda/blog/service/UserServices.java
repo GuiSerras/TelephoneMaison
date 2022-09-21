@@ -29,4 +29,9 @@ public class UserServices {
 		return userRepo.save(user);
 		//return true;
 	}
+	public User updateUser(User user) {
+	
+		return userRepo.save(user);
+		//return true;
+	}
 }

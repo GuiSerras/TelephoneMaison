@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="keywords" content="Make a reservation">
+<meta name="description" content="">
+<title>Insert title here</title>
+<link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="register.css" media="screen">
+<script class="u-script" type="text/javascript"
+	src="jquery-1.9.1.min.js" defer></script>
+<script class="u-script" type="text/javascript" src="nicepage.js" defer></script>
+<meta name="generator" content="Nicepage 4.17.13, nicepage.com">
+<link id="u-theme-google-font" rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+
+<script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+<meta name="theme-color" content="#478ac9">
+<meta property="og:title" content="Page 16">
+<meta property="og:type" content="website">
+</head>
+<body>
+	<div th:replace="fragments/header::header"></div>
+	<section class="u-align-center u-clearfix u-section-1"
+		id="carousel_354f">
+		<div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+			<div
+				class="u-border-10 u-border-palette-1-base u-container-style u-group u-group-1">
+				<div
+					class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-container-layout-1">
+					<div class="u-form u-form-1">
+
+						<form method="POST" th:action="@{/users?action=nom}"
+							th:object="${user}"
+							class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+							style="padding: 10px" name="form">
+							<div class="u-form-group u-form-name row align-items-center">
+								<label for="nom" class="u-label col">Nom :</label> <input
+									type="text" th:field="*{nom}"
+									placeholder="Enter your Last Name" id="nom" name="nom"
+									class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white col">
+								<span class="text-danger" th:if="${#fields.hasErrors('nom')}"
+									th:errors="*{nom}"></span>
+								<div class="u-align-right u-form-submit col">
+									<button type="submit" class="u-btn u-btn-submit u-button-style">Modify</button>
+								</div>
+							</div>
+						</form>
+						<div class="u-form-email u-form-group">
+							<hr>
+						</div>
+						<form method="POST" th:action="@{/users?action=prenom}"
+							th:object="${user}"
+							class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+							style="padding: 10px" name="form">
+							<div class="u-form-group u-form-name row align-items-center">
+								<label for="prenom" class="u-label col">Prénom :</label> <input
+									type="text" th:field="*{prenom}"
+									placeholder="Enter your First Name" id="prenom" name="prenom"
+									class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white col">
+								<span class="text-danger" th:if="${#fields.hasErrors('prenom')}"
+									th:errors="*{prenom}"></span>
+
+								<div class="u-align-right u-form-submit col">
+									<button type="submit" class="u-btn u-btn-submit u-button-style">Modify</button>
+								</div>
+
+							</div>
+						</form>
+						<div class="u-form-email u-form-group">
+							<hr>
+						</div>
+						<form method="POST" th:action="@{/users?action=dateN}"
+							th:object="${user}"
+							class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+							style="padding: 10px" name="form">
+						<div class="u-form-group u-form-name row align-items-center">
+							<label for="dateN" class="u-label col">Date de naissance
+								:</label> <input type="date" th:field="*{dateN}" id="dateN" name="dateN"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white w-auto col">
+							<span class="text-danger" th:if="${#fields.hasErrors('dateN')}"
+								th:errors="*{dateN}"></span>
+
+							<div class="u-align-right col u-form-submit">
+								<button type="submit" class="u-btn u-btn-submit u-button-style">Modify</button>
+							</div>
+
+						</div>
+						</form>
+						<div class="u-form-email u-form-group">
+							<hr>
+						</div>
+						<form method="POST" th:action="@{/users?action=tel}"
+							th:object="${user}"
+							class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+							style="padding: 10px" name="form">
+						<div class="u-form-email u-form-group row align-items-center">
+							<label for="telephone" class="u-label col">Numéro de
+								téléphone :</label> <input type="text" th:field="*{telephone}"
+								placeholder="Enter your phone number" id="telephone"
+								name="telephone"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white col">
+							<span class="text-danger"
+								th:if="${#fields.hasErrors('telephone')}"
+								th:errors="*{telephone}"></span>
+
+							<div class="u-align-right u-form-submit col">
+								<button type="submit" class="u-btn u-btn-submit u-button-style">Modify</button>
+							</div>
+
+						</div>
+						</form>
+						<div class="u-form-email u-form-group">
+							<hr>
+						</div>
+						<form method="POST" th:action="@{/users?action=email}"
+							th:object="${user}"
+							class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+							style="padding: 10px" name="form">
+						<div class="u-form-email u-form-group row align-items-center">
+							<label for="email" class="u-label col">Email :</label> <input
+								type="email" th:field="*{email}"
+								placeholder="Enter a valid email adress" id="email" name="email"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white col">
+							<span class="text-danger" th:if="${#fields.hasErrors('email')}"
+								th:errors="*{email}"></span>
+
+							<div class="u-align-right u-form-submit col">
+								<button type="submit" class="u-btn u-btn-submit u-button-style">Modify</button>
+							</div>
+
+						</div>
+						
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section class="u-backlink u-clearfix u-grey-80">
+
+		<p class="u-text">
+			<span>Created with us.</span>
+		</p>
+
+	</section>
+</body>
+</html>
